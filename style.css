@@ -1,0 +1,373 @@
+/* ===========================================================
+   Manty's Desi Closet — tokens
+   =========================================================== */
+:root {
+  --ink: #141414;
+  --paper: #FBF9F5;
+  --paper-alt: #F1EDE4;
+  --line: rgba(20,20,20,0.16);
+
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Jost', sans-serif;
+
+  --maxw: 1080px;
+  --gutter: 6vw;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0 0 0.6em;
+  opacity: 0.7;
+}
+
+/* ===========================================================
+   Stitched hairline border — used top of page + footer
+   =========================================================== */
+.stitch-border {
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    to right, var(--ink) 0 10px, transparent 10px 18px
+  );
+  opacity: 0.5;
+}
+.stitch-border.top { margin: 0; }
+
+/* ===========================================================
+   Nav
+   =========================================================== */
+.nav {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.6rem var(--gutter) 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.nav__mark {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+.nav__mark img { width: 38px; height: 38px; }
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+.nav__links a {
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.nav__links a:not(.nav__cta):hover { border-color: var(--ink); }
+.nav__cta {
+  border: 1px solid var(--ink);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+.nav__cta:hover { background: var(--ink); color: var(--paper); }
+
+/* ===========================================================
+   Hero
+   =========================================================== */
+.hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4.5rem var(--gutter) 3.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero__emblem {
+  width: 132px;
+  height: 132px;
+  margin-bottom: 1.6rem;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  letter-spacing: 0.01em;
+  margin: 0 0 0.5rem;
+  line-height: 1.05;
+}
+.hero .tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 0 0 2.4rem;
+  opacity: 0.85;
+}
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0.85rem 1.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--ink);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn--solid { background: var(--ink); color: var(--paper); }
+.btn--solid:hover { background: #000; }
+.btn--outline { background: transparent; color: var(--ink); }
+.btn--outline:hover { background: var(--ink); color: var(--paper); }
+
+/* ===========================================================
+   Signature stitch divider
+   =========================================================== */
+.stitch-divider {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  line-height: 0;
+}
+.stitch-divider svg { width: 100%; height: 34px; display: block; }
+.stitch-divider--flip svg { transform: scaleY(-1); }
+.stitch-path {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 6 10;
+  transition: stroke-dashoffset 1.4s ease;
+}
+.stitch-path.is-drawn { stroke-dashoffset: 0 !important; }
+
+/* ===========================================================
+   Story
+   =========================================================== */
+.story {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.4rem var(--gutter) 2.8rem;
+  text-align: center;
+}
+.story blockquote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  line-height: 1.5;
+  font-weight: 500;
+}
+.story__sub {
+  margin: 1.6rem 0 0;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+/* ===========================================================
+   Gallery / Products
+   =========================================================== */
+.gallery {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2.6rem var(--gutter) 3.2rem;
+  text-align: center;
+}
+.gallery h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  margin: 0 0 0.6rem;
+}
+.gallery__intro {
+  max-width: 480px;
+  margin: 0 auto 2.6rem;
+  font-size: 0.92rem;
+  opacity: 0.7;
+}
+.gallery__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+.gallery__item {
+  margin: 0;
+  flex: 1 1 200px;
+  max-width: 230px;
+}
+.gallery__item img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+.gallery__placeholder {
+  aspect-ratio: 4 / 5;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  background: var(--paper-alt);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  color: var(--ink);
+}
+.gallery__placeholder svg {
+  width: 34px;
+  height: 34px;
+  opacity: 0.55;
+}
+.gallery__placeholder span {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+.gallery__item figcaption {
+  margin-top: 0.8rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+.gallery__cta { margin-top: 0.4rem; }
+
+/* ===========================================================
+   Reach us
+   =========================================================== */
+.reach {
+  background: var(--paper-alt);
+  padding: 3.6rem var(--gutter) 4.2rem;
+  text-align: center;
+}
+.reach h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  margin: 0 0 2.6rem;
+}
+.reach__grid {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.4rem;
+}
+.reach__card {
+  flex: 1 1 260px;
+  max-width: 320px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 2.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reach__card img { border-radius: 6px; margin-bottom: 1.2rem; }
+.reach__icon {
+  width: 40px;
+  height: 40px;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+}
+.reach__card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  word-break: break-word;
+}
+.reach__card p {
+  margin: 0;
+  font-size: 0.92rem;
+  opacity: 0.85;
+}
+.reach__card a { text-decoration: none; border-bottom: 1px solid var(--line); }
+.reach__card a:hover { border-color: var(--ink); }
+
+/* ===========================================================
+   Footer
+   =========================================================== */
+.footer {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2.4rem var(--gutter) 3rem;
+  text-align: center;
+}
+.footer .stitch-border { margin-bottom: 2rem; }
+.footer__note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  margin: 0 0 0.8rem;
+}
+.footer__copy {
+  font-size: 0.78rem;
+  opacity: 0.55;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+/* ===========================================================
+   Responsive
+   =========================================================== */
+@media (max-width: 760px) {
+  .reach__card { flex-basis: 100%; max-width: 380px; }
+  .nav__links { gap: 1.1rem; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .stitch-path { transition: none; stroke-dashoffset: 0; }
+}
+
+/* Visible keyboard focus */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
