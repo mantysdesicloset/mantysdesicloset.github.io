@@ -93,10 +93,14 @@ img { max-width: 100%; display: block; }
 }
 .nav__links a:not(.nav__cta):hover { border-color: var(--ink); }
 .nav__cta {
+  display: inline-block;
   border: 1px solid var(--ink);
-  padding: 0.5rem 1.1rem;
+  padding: 0.5rem 1.4rem;
   border-radius: 999px;
   font-weight: 500;
+  white-space: nowrap;
+  line-height: 1.4;
+  text-align: center;
 }
 .nav__cta:hover { background: var(--ink); color: var(--paper); }
 
