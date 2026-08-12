@@ -104,6 +104,10 @@ img { max-width: 100%; display: block; }
 }
 .nav__cta:hover { background: var(--ink); color: var(--paper); }
 
+.nav__links a.nav__cta {
+  border-bottom: 1px solid var(--ink);
+}
+
 /* ===========================================================
    Hero
    =========================================================== */
