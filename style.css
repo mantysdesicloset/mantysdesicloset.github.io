@@ -454,3 +454,38 @@ a:focus-visible, button:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
 }
+
+/* ===========================================================
+   Policy
+   =========================================================== */
+   .policy {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 30px;
+    text-align: center;
+  }
+
+  .policy h1,
+  .policy h2,
+  .policy h3,
+  .policy p,
+  .policy__updated {
+    text-align: center;
+  }
+
+  .policy ul,
+  .policy ol {
+    display: inline-block;
+    text-align: left;
+    margin: 10px auto 25px;
+    padding-left: 25px;
+  }
+
+  .policy li {
+    margin-bottom: 8px;
+  }
+
+  .policy hr {
+    margin: 35px auto;
+    width: 100%;
+  }
